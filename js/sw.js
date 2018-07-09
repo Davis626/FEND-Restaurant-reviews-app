@@ -1,8 +1,8 @@
 // set variable for cache
 let cacheID = 'restaurant-cache-1';
 
-// Caching all the URL and files for service worker
-let urlToCache = [
+// set variable for caching all the URL and files for service worker
+let urlCache = [
     '/',
     './restaurant.html',
     './index.html',
@@ -23,36 +23,36 @@ let urlToCache = [
     './js/dbhelper.js',
 ];
 
-// if event listener is in "install" event, open cache folder and choose correct cache
+// In "install" event: open cache folder, choose correct cache name for file, add all the URL and files to cache
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(cacheID).then(cache => {
-            return cache.addAll(urlToCache);
+        caches.open(cacheID).then(cache => { //when promise is resolved add all the URL and files to cache
+            return cache.addAll(urlCache);
             console.log(cache);
 
-        }).catch(error => {
+        }).catch(error => { //when promise is rejected console.log error
             console.log(error);
         })
     );
 });
 
-// if event listener is in "activate" event, cache keys and add promise for cache names (replace old caches with new ones)
+// In "activate" event: cache keys, replace old caches with new ones by cheching cache name
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
                 cacheNames.filter(cacheName => {
                     return cacheName.startsWith('restaurant-') &&
-                        cacheName != cacheID;
+                        cacheName != cacheID; //check if cache name is not equal to the new cache name
                 }).map(cacheName => {
-                    return caches.delete(cacheName);
+                    return caches.delete(cacheName); //if not equal - delete the old cache name
                 })
             );
         })
     );
 });
 
-// fetch data
+// In "fetch" event: match event request and return fetch request to page
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request).then(response => {
