@@ -24,7 +24,7 @@
       </h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <nav aria-label="breadcrumb" role="navigation">
+    <nav aria-labelledby="breadcrumb" role="navigation">
       <ul id="breadcrumb" >
         <li>
           <a href="/">Home</a>
@@ -45,13 +45,16 @@
       <p id="restaurant-cuisine"></p>
     </section>
     <section id="restaurant-info">
-      <p id="restaurant-address" aria-label="restaurant's address" role="Contentinfo"></p>
+      <p id="restaurant-address" aria-labelledby="restaurant's address" role="Contentinfo"></p>
+      <label id="restaurant-address-label" class="restaurant-info-label">address</label>
       <!-- Beginning map -->
-      <section id="map-container">
-        <div id='map' aria-label="map" role="application" ></div>
+      <section id="map-container" aria-labelledby="mapbox map" role="application">
+        <div id='map'</div>
       </section>
+      <label id="info-page-map-aria-label" class="map-aria-label">mapbox map application</label>
       <!-- End map -->
-      <table id="restaurant-hours" aria-label="restaurant's hours" role="Contentinfo"></table>
+      <table id="restaurant-hours" aria-labelledby="restaurant's hours" role="Contentinfo"></table>
+      <label id="restaurant-hours-label" class="restaurant-info-label">work hours</label>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
