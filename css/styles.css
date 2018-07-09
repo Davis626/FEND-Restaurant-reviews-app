@@ -132,12 +132,7 @@ nav h1 a {
 .map-aria-label{
 	display: none;
 }
-.leaflet-container a {
-    color: #252831;
-}
-.leaflet-control-attribution{
-	    color: #252831;
-}
+
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
