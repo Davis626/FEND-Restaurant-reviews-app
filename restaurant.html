@@ -40,12 +40,12 @@
   <main id="maincontent">
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h2 id="restaurant-name"></h2>
+      <h2 id="restaurant-name" aria-label="restaurant's name"></h2>
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
     </section>
     <section id="restaurant-info">
-      <p id="restaurant-address" aria-labelledby="restaurant's address" role="Contentinfo"></p>
+      <p id="restaurant-address" aria-label="restaurant's address"></p>
       <label id="restaurant-address-label" class="restaurant-info-label">address</label>
       <!-- Beginning map -->
       <section id="map-container" aria-label="map" role="application">
@@ -53,7 +53,7 @@
       </section>
       <label id="info-page-map-aria-label" class="map-aria-label">mapbox map application</label>
       <!-- End map -->
-      <table id="restaurant-hours" aria-labelledby="restaurant's hours" role="Contentinfo"></table>
+      <table id="restaurant-hours" aria-label="restaurant's hours"></table>
       <label id="restaurant-hours-label" class="restaurant-info-label">work hours</label>
     </section>
     <!-- end restaurant -->
