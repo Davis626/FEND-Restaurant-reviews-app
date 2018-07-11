@@ -3,24 +3,23 @@ let staticCacheName = 'restaurant-cache-1';
 
 // set variable for caching all the URL and files for service worker
 let urlCache = [
-    '/',
-    '/restaurant.html',
-    '/index.html',
-    '/css/styles.css',
-    '/data/restaurants.json',
-    '/img/1.jpg',
-    '/img/2.jpg',
-    '/img/3.jpg',
-    '/img/4.jpg',
-    '/img/5.jpg',
-    '/img/6.jpg',
-    '/img/7.jpg',
-    '/img/8.jpg',
-    '/img/9.jpg',
-    '/img/10.jpg',
-    '/js/main.js',
-    '/js/restaurant_info.js',
-    '/js/dbhelper.js',
+  '/skeleton',
+  'js/main.js',
+  'js/restaurant_info.js',
+  'js/dbhelper.js',
+  'css/styles.css',
+  'data/restaurants.json',
+  'img/1.jpg',
+  'img/2.jpg',
+  'img/3.jpg',
+  'img/4.jpg',
+  'img/5.jpg',
+  'img/6.jpg',
+  'img/7.jpg',
+  'img/8.jpg',
+  'img/9.jpg',
+  'img/10.jpg',
+  '//normalize-css.googlecode.com/svn/trunk/normalize.css"'
 ];
 
 // In "install" event: open cache folder, choose correct cache name for file, add all the URL and files to cache
