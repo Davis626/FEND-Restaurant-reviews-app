@@ -195,7 +195,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
  * Add service worker.
  */
  if ("serviceWorker" in navigator) { //check if browser supports service worker or not
-   navigator.serviceWorker.register('/js/sw.js') //if supported - register service worker (directory of sw file)
+   navigator.serviceWorker.register('sw.js') //if supported - register service worker (directory of sw file)
   .then(reg => { //when promise is resolved:
     if(reg.installing) {
       console.log('Service worker status: installing');
