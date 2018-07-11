@@ -195,8 +195,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
  * Add service worker.
  */
  if ("serviceWorker" in navigator) { //check if browser supports service worker or not
-   navigator.serviceWorker.register('./js/sw.js') //if supported - register service worker (directory of sw file)
-  .then((reg) => { //when promise is resolved:
+   navigator.serviceWorker.register('/js/sw.js') //if supported - register service worker (directory of sw file)
+  .then(reg => { //when promise is resolved:
     if(reg.installing) {
       console.log('Service worker status: installing');
     } else if(reg.waiting) {
@@ -206,7 +206,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     console.log('Service worker registration succeeded: ' + reg.scope);
 
-  }).catch((error) => { // when promise is rejected
+  }).catch(error => { // when promise is rejected
     console.log('Registration failed: ' + error);
   });
 }

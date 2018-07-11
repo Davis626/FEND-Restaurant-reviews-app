@@ -1,32 +1,32 @@
 // set variable for cache
-let cacheID = 'restaurant-cache-1';
+let staticCacheName = 'restaurant-cache-1';
 
 // set variable for caching all the URL and files for service worker
 let urlCache = [
     '/',
-    './restaurant.html',
-    './index.html',
-    './css/styles.css',
-    './data/restaurants.json',
-    './img/1.jpg',
-    './img/2.jpg',
-    './img/3.jpg',
-    './img/4.jpg',
-    './img/5.jpg',
-    './img/6.jpg',
-    './img/7.jpg',
-    './img/8.jpg',
-    './img/9.jpg',
-    './img/10.jpg',
-    './js/main.js',
-    './js/restaurant_info.js',
-    './js/dbhelper.js',
+    '/restaurant.html',
+    '/index.html',
+    '/css/styles.css',
+    '/data/restaurants.json',
+    '/img/1.jpg',
+    '/img/2.jpg',
+    '/img/3.jpg',
+    '/img/4.jpg',
+    '/img/5.jpg',
+    '/img/6.jpg',
+    '/img/7.jpg',
+    '/img/8.jpg',
+    '/img/9.jpg',
+    '/img/10.jpg',
+    '/js/main.js',
+    '/js/restaurant_info.js',
+    '/js/dbhelper.js',
 ];
 
 // In "install" event: open cache folder, choose correct cache name for file, add all the URL and files to cache
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(cacheID).then(cache => { //when promise is resolved add all the URL and files to cache
+        caches.open(staticCacheName).then(cache => { //when promise is resolved add all the URL and files to cache
             return cache.addAll(urlCache);
             console.log(cache);
 
@@ -43,7 +43,7 @@ self.addEventListener('activate', event => {
             return Promise.all(
                 cacheNames.filter(cacheName => {
                     return cacheName.startsWith('restaurant-') &&
-                        cacheName != cacheID; //check if cache name is not equal to the new cache name
+                        cacheName != staticCacheName; //check if cache name is not equal to the new cache name
                 }).map(cacheName => {
                     return caches.delete(cacheName); //if not equal - delete the old cache name
                 })
