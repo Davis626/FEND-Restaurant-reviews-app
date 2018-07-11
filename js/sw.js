@@ -4,6 +4,8 @@ let staticCacheName = 'restaurant-cache-1';
 // set variable for caching all the URL and files for service worker
 let urlCache = [
   '/skeleton',
+  'index.html',
+	'restaurant.html'
   'js/main.js',
   'js/restaurant_info.js',
   'js/dbhelper.js',
