@@ -5,7 +5,7 @@ let staticCacheName = 'restaurant-cache-1';
 let urlCache = [
   '/skeleton',
   'index.html',
-	'restaurant.html'
+	'restaurant.html',
   'js/main.js',
   'js/restaurant_info.js',
   'js/dbhelper.js',
@@ -20,8 +20,7 @@ let urlCache = [
   'img/7.jpg',
   'img/8.jpg',
   'img/9.jpg',
-  'img/10.jpg',
-  '//normalize-css.googlecode.com/svn/trunk/normalize.css"'
+  'img/10.jpg'
 ];
 
 // In "install" event: open cache folder, choose correct cache name for file, add all the URL and files to cache
